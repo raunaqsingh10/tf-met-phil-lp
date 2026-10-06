@@ -165,6 +165,7 @@ h3 { font-size: clamp(21px, 2.1vw, 28px); line-height: 1.19; letter-spacing: -.0
 .social-photo { width: 100%; margin-top: 24px; }
 .social-photo img { display: block; width: 100%; height: auto; border-radius: 18px; }
 .social-caption { margin-top: 9px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.difference-photo + .body { max-width: 760px; margin-top: 24px; font-size: 15px; line-height: 1.55; }
 .social-carousel { width: 100%; margin-top: 24px; }
 .social-carousel-track { display: flex; width: 100%; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-behavior: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; border-radius: 18px; background: #d5dedb; }
 .social-carousel-track::-webkit-scrollbar { display: none; }

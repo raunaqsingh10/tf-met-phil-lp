@@ -10,10 +10,10 @@ const stories = [
     feature: false,
     title: 'Start with adventure.',
     description: 'Get into the water for Moalboal’s Sardine Run, take on Kawasan Falls and canyoneering, then slow things down with beach and café time.',
-    image: '/media/photos/moalboal-experience.jpg',
-    alt: 'Outrigger boat and swimmers on calm water at sunset in the Philippines',
-    width: 1357,
-    height: 1800,
+    image: '/media/photos/moalboal-sardine-run.jpg',
+    alt: 'A dense school of sardines swimming underwater in Moalboal, Philippines',
+    width: 1800,
+    height: 1200,
   },
   {
     place: 'Coron',
@@ -118,9 +118,9 @@ const proof = [
   },
   {
     question: '“Will I actually enjoy the people?”',
-    image: '/media/proof/message-2.webp',
-    height: 253,
-    alt: 'Past MET traveller: “Bali was a proper experience! Good food, beaches, some crazy nights and most importantly a really nice bunch of people. Thanks for putting it all together.”',
+    image: '/media/proof/message-4.webp',
+    height: 287,
+    alt: 'Past MET traveller: “Honestly, the people were one of the best parts of the trip. Everyone was quite chilled out, friendly and had interesting stories to share.”',
   },
   {
     question: '“What if I’m coming alone?”',
@@ -130,9 +130,9 @@ const proof = [
   },
   {
     question: '“Would I do another MET trip?”',
-    image: '/media/proof/message-4.webp',
-    height: 287,
-    alt: 'Past MET traveller: “Honestly, the people were one of the best parts of the trip. Everyone was quite chilled out, friendly and had interesting stories to share.”',
+    image: '/media/proof/message-2.webp',
+    height: 253,
+    alt: 'Past MET traveller: “Bali was a proper experience! Good food, beaches, some crazy nights and most importantly a really nice bunch of people. Thanks for putting it all together. Next trip, I’m in.”',
   },
 ]
 
@@ -423,7 +423,6 @@ function App() {
             <div className="reframe"><p>That is why MET does not only curate the trip. We curate the group too.</p></div>
             <figure className="social-photo difference-photo">
               <img src="/media/social/met-social-people-selfie-boat.jpg" alt="MET travellers share a selfie aboard a boat on a sunny day." width="1448" height="1086" loading="lazy" decoding="async" />
-              <figcaption className="social-caption">Past MET travel experience</figcaption>
             </figure>
             <p className="body">This is not an open group where anyone who pays gets added to the trip. Every traveller goes through MET’s curation process before being approved to join.</p>
             <div className="timeline">
