@@ -54,19 +54,26 @@ export function CallConfirmedPage() {
 
   return (
     <main className="qualification-page outcome-page">
-      <header className="qualification-header">
-        <a href="/" className="qualification-brand" aria-label="MET Philippines landing page">
-          MET <span>PHILIPPINES</span>
-        </a>
+      <header className="site-header qualification-header">
+        <div className="header-inner">
+          <a href="/" className="brand" aria-label="MET Philippines landing page">
+            <img className="brand-icon" src="/media/brand/met-icon.webp" alt="" width="118" height="120" />
+            <img className="brand-wordmark" src="/media/brand/met-wordmark.webp" alt="MET" width="280" height="104" />
+          </a>
+          <span className="header-trip">Philippines 2026</span>
+        </div>
       </header>
       <section className="outcome-intro" aria-labelledby="confirmation-title">
-        <p className="eyebrow">Philippines social adventure · 18–26 December 2026</p>
-        <h1 id="confirmation-title">Your call is booked.</h1>
-        <p>We're looking forward to speaking with you about the Philippines trip, the group experience and any questions you have.</p>
-        <p>Please save the date and time you selected. Booking this conversation does not mean you've been approved for the trip or committed to a payment.</p>
-        <a className="outcome-home-link" href="/">Back to trip details</a>
+        <h1 id="confirmation-title">You're booked to speak with MET!</h1>
+        <p>Your Philippines Trip Call is confirmed.</p>
+        <p>You'll receive your meeting details and joining instructions through the booking confirmation.</p>
+        <div className="confirmation-preparation">
+          <h2>Before we speak...</h2>
+          <p>Take a look at the Philippines itinerary we've sent you and note down anything you'd like to ask about the trip, the group, coming solo or the payment options.</p>
+          <p>We're looking forward to learning more about you and helping you explore whether this Philippines experience is right for you.</p>
+          <p className="confirmation-signoff"><strong>See you on the call!</strong></p>
+        </div>
       </section>
-      <footer className="qualification-footer">MET · Curated group travel, not a dating trip.</footer>
     </main>
   )
 }

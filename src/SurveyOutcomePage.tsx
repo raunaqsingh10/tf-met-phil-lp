@@ -83,17 +83,23 @@ export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
 
   return (
     <main className="qualification-page outcome-page">
-      <header className="qualification-header">
-        <a href="/" className="qualification-brand" aria-label="MET Philippines landing page">MET <span>PHILIPPINES</span></a>
+      <header className="site-header qualification-header">
+        <div className="header-inner">
+          <a href="/" className="brand" aria-label="MET Philippines landing page">
+            <img className="brand-icon" src="/media/brand/met-icon.webp" alt="" width="118" height="120" />
+            <img className="brand-wordmark" src="/media/brand/met-wordmark.webp" alt="MET" width="280" height="104" />
+          </a>
+          <span className="header-trip">Philippines 2026</span>
+        </div>
       </header>
       <section className="outcome-intro" aria-labelledby="outcome-title">
-        <p className="eyebrow">Philippines social adventure · 18–26 December 2026</p>
         {booking ? (
           <>
-            <h1 id="outcome-title">Let's talk about your Philippines trip.</h1>
-            <p>Thanks for answering those questions. The next step is a quick conversation with the MET team to understand the experience and ask anything that's on your mind.</p>
-            <p>Booking a call is not an approval or a commitment to join the trip.</p>
-            <section className="outcome-calendar" aria-label="Book your MET Philippines consultation">
+            <h1 id="outcome-title">Let's find a time to talk about the Philippines.</h1>
+            <p>Based on your answers, this looks like a trip worth exploring together.</p>
+            <p>Choose a convenient time below to speak with the MET team, ask your questions and find out more about the experience.</p>
+            <section className="outcome-calendar" aria-labelledby="calendar-title">
+              <h2 id="calendar-title">Philippines Trip Call with MET</h2>
               <iframe
                 src={calendarUrl}
                 title="Book your MET Philippines trip consultation"
@@ -102,6 +108,7 @@ export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
                 scrolling="no"
                 style={{ width: '100%', height: '1080px', border: 'none', overflow: 'hidden' }}
               />
+              <p className="outcome-reassurance"><em>No payment required. Your place on the trip is only reserved after MET's approval and the booking payment.</em></p>
               <p className="outcome-calendar-fallback">
                 Can't see the booking calendar?{' '}
                 <a href={calendarUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab.</a>
@@ -110,14 +117,15 @@ export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
           </>
         ) : (
           <>
-            <h1 id="outcome-title">Thanks for your interest in the Philippines trip.</h1>
-            <p>Based on your answers, it looks like this particular trip may not be the right fit right now.</p>
-            <p>We appreciate you taking the time to explore the experience. There's no further action needed.</p>
-            <a className="outcome-home-link" href="/">Back to trip details</a>
+            <h1 id="outcome-title">This Philippines trip may not be the right fit for you right now.</h1>
+            <p>Thank you for taking the time to tell us a little about yourself.</p>
+            <p>Based on your answers, it looks like some of the requirements for this particular trip may not line up with your current plans or what you're looking for.</p>
+            <p><strong>Your Philippines trip details are still on their way to your WhatsApp.</strong></p>
+            <p>If your plans change, you're welcome to review the details and get back in touch.</p>
+            <p className="outcome-reassurance"><em>We appreciate your interest in travelling with MET.</em></p>
           </>
         )}
       </section>
-      <footer className="qualification-footer">MET · Curated group travel, not a dating trip.</footer>
     </main>
   )
 }

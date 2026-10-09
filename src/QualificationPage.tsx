@@ -76,14 +76,25 @@ export function QualificationPage() {
 
   return (
     <main className="qualification-page">
-      <header className="qualification-header">
-        <a href="/" className="qualification-brand" aria-label="MET Philippines landing page">MET <span>PHILIPPINES</span></a>
+      <header className="site-header qualification-header">
+        <div className="header-inner">
+          <a href="/" className="brand" aria-label="MET Philippines landing page">
+            <img className="brand-icon" src="/media/brand/met-icon.webp" alt="" width="118" height="120" />
+            <img className="brand-wordmark" src="/media/brand/met-wordmark.webp" alt="MET" width="280" height="104" />
+          </a>
+          <span className="header-trip">Philippines 2026</span>
+        </div>
       </header>
       <section className="qualification-intro" aria-labelledby="qualification-title">
-        <p className="eyebrow">Philippines social adventure · 18–26 December 2026</p>
-        <h1 id="qualification-title">Your trip-details request is in.</h1>
-        <p>Just four quick questions to help us understand whether the Philippines trip is a good fit for you. If it is, you'll be able to explore a conversation with the MET team.</p>
-        <p className="qualification-time">4 questions · About 1 minute · No payment required</p>
+        <h1 id="qualification-title">Your Philippines trip details are on their way!</h1>
+        <p>We'll send everything to your WhatsApp so you can explore the trip at your own pace.</p>
+        <div className="qualification-invitation">
+          <h2>Thinking this could be your December trip? Let's talk about it.</h2>
+          <p>There's a lot more to a MET trip than what's written in an itinerary.</p>
+          <p><strong>Speak directly with the MET team</strong> to learn more about the experience, ask about the people you'll be travelling with, understand how the group is curated, and get answers to anything you're unsure about.</p>
+          <p>It's also a chance for us to get to know you and understand what you're looking for, so we can see whether this trip could be a good fit for you.</p>
+          <p className="qualification-prompt"><strong>Answer a few quick questions below to find a convenient time to talk.</strong></p>
+        </div>
       </section>
       <section className="qualification-survey" aria-label="Philippines qualification questions">
         <iframe
@@ -99,7 +110,7 @@ export function QualificationPage() {
           <a href={surveyUrl} target="_blank" rel="noopener noreferrer">Open the survey in a new tab.</a>
         </p>
       </section>
-      <footer className="qualification-footer">MET · Curated group travel, not a dating trip.</footer>
+      <p className="qualification-reassurance"><em>Just exploring for now? That's completely fine. Your trip details are on their way, and you can come back to this step whenever you're ready.</em></p>
     </main>
   )
 }

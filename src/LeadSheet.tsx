@@ -80,12 +80,11 @@ export function LeadSheet({ onClose }: LeadSheetProps) {
       className="sheet-backdrop"
       onMouseDown={(event) => { if (event.target === event.currentTarget) onClose() }}
     >
-      <div className="lead-sheet" role="dialog" aria-modal="true" aria-labelledby="lead-title" tabIndex={-1} ref={dialogRef}>
+      <div className="lead-sheet" role="dialog" aria-modal="true" aria-labelledby="lead-title" aria-describedby="lead-description" tabIndex={-1} ref={dialogRef}>
         <div className="sheet-head">
           <div>
-            <p className="eyebrow">Trip details</p>
             <h2 id="lead-title">Get the Philippines Trip Details</h2>
-            <p className="small">Where should we send them?</p>
+            <p className="sheet-description" id="lead-description">Get the complete itinerary, inclusions, pricing, payment options and details of how MET's curated group experience works, sent straight to your WhatsApp.</p>
           </div>
           <button className="sheet-close" type="button" onClick={onClose} aria-label="Close form">×</button>
         </div>
@@ -109,6 +108,7 @@ export function LeadSheet({ onClose }: LeadSheetProps) {
           data-cookie-consent="false"
           style={{ width: '100%', height: '1574px', border: 'none', borderRadius: '8px' }}
         />
+        <p className="sheet-micro"><em>No payment or booking required.</em></p>
         <p className="ghl-form-fallback">
           Form not loading? <a href={formUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab</a>.
         </p>
