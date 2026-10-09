@@ -1,0 +1,27 @@
+/* Short funnel pages reuse the landing page's font, palette and header. */
+.qualification-page { min-height: 100dvh; padding-bottom: 40px; }
+.qualification-header .header-inner { width: min(100% - 40px, 800px); }
+.qualification-intro { width: min(100% - 40px, 800px); margin: 0 auto; padding: 38px 0 22px; }
+.qualification-intro h1 { max-width: 700px; margin-bottom: 14px; color: var(--ink); font-size: clamp(30px, 4vw, 42px); line-height: 1.12; letter-spacing: -.04em; }
+.qualification-intro p { max-width: 680px; color: var(--body); font-size: 16px; line-height: 1.6; }
+.qualification-invitation { margin-top: 28px; padding-top: 25px; border-top: 1px solid var(--line); }
+.qualification-invitation h2 { max-width: 700px; margin-bottom: 16px; font-size: clamp(24px, 3vw, 32px); line-height: 1.16; letter-spacing: -.035em; }
+.qualification-invitation p + p { margin-top: 12px; }
+.qualification-invitation .qualification-prompt { margin-top: 18px; color: var(--teal-dark); }
+.qualification-survey { width: min(100% - 40px, 800px); margin: 0 auto; padding: 8px 8px 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+.qualification-survey iframe { display: block; width: 100%; }
+.qualification-survey-fallback { margin: 8px 12px 0; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.5; }
+.qualification-survey-fallback a { color: var(--teal-dark); text-underline-offset: 3px; }
+.qualification-reassurance { width: min(100% - 40px, 800px); margin: 18px auto 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.qualification-reassurance em { display: block; max-width: 680px; }
+.qualification-iframe-redirect { padding: 24px; font-size: 16px; line-height: 1.5; }
+.qualification-iframe-redirect a { color: var(--teal-dark); }
+@media (max-width: 620px) {
+  .qualification-page { padding-bottom: 28px; }
+  .qualification-intro { padding-top: 28px; }
+  .qualification-invitation { margin-top: 23px; padding-top: 21px; }
+  .qualification-survey { padding: 6px 2px 14px; border-radius: 15px; }
+}
+@media (max-width: 360px) {
+  .qualification-header .header-inner, .qualification-intro, .qualification-survey, .qualification-reassurance { width: calc(100% - 32px); }
+}
