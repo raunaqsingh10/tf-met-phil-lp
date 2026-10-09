@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/qualification", "destination": "/index.html" },
     { "source": "/book-call", "destination": "/index.html" },
-    { "source": "/not-qualified", "destination": "/index.html" }
+    { "source": "/not-qualified", "destination": "/index.html" },
+    { "source": "/call-confirmed", "destination": "/index.html" }
   ]
 }
