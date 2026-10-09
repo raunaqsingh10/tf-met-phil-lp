@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/qualification", "destination": "/index.html" }
+  ]
+}
