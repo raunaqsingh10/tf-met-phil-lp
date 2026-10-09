@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import { QualificationPage } from './QualificationPage.tsx'
 import { SurveyOutcomePage } from './SurveyOutcomePage.tsx'
+import { CallConfirmedPage } from './CallConfirmedPage.tsx'
 
 const route = window.location.pathname.replace(/\/+$/, '') || '/'
 
@@ -12,7 +13,9 @@ const content = route === '/qualification'
     ? <SurveyOutcomePage outcome="book-call" />
     : route === '/not-qualified'
       ? <SurveyOutcomePage outcome="not-qualified" />
-      : <App />
+      : route === '/call-confirmed'
+        ? <CallConfirmedPage />
+        : <App />
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>{content}</StrictMode>,
