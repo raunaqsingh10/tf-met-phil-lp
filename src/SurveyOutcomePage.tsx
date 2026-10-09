@@ -22,11 +22,29 @@ function withAttribution(): string {
   return next.toString()
 }
 
+const calendarEmbedScriptUrl = 'https://link.yourmarketingai.com/js/form_embed.js'
+const calendarBaseUrl = 'https://link.yourmarketingai.com/widget/booking/p6MbnDlBI7ywC4SfwpRS'
+
+function buildCalendarUrl(destinationUrl: string): string {
+  const source = new URL(destinationUrl)
+  const calendar = new URL(calendarBaseUrl)
+  // Never put a registrant's contact details into a URL. Send campaign/click identifiers only.
+  for (const [key, value] of source.searchParams.entries()) {
+    const normalized = key.toLowerCase()
+    if (/^utm_[a-z0-9_]+$/.test(normalized) || marketingIds.has(normalized)) {
+      calendar.searchParams.append(key, value)
+    }
+  }
+  return calendar.toString()
+}
+
 type Outcome = 'book-call' | 'not-qualified'
 
 export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
   const destinationUrl = useMemo(withAttribution, [])
   const nestedInIframe = window.self !== window.top
+  const booking = outcome === 'book-call'
+  const calendarUrl = useMemo(() => buildCalendarUrl(destinationUrl), [destinationUrl])
 
   useEffect(() => {
     // GHL survey redirects may be contained in the embedded iframe.
@@ -43,7 +61,16 @@ export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
     if (destinationUrl !== window.location.href) {
       window.history.replaceState(window.history.state, '', destinationUrl)
     }
-  }, [destinationUrl, nestedInIframe])
+
+    if (booking && !document.querySelector('script[data-ghl-booking-embed="true"]')) {
+      // The provided GHL script adjusts the booking iframe height and handles provider messages.
+      const script = document.createElement('script')
+      script.src = calendarEmbedScriptUrl
+      script.async = true
+      script.dataset.ghlBookingEmbed = 'true'
+      document.body.appendChild(script)
+    }
+  }, [destinationUrl, nestedInIframe, booking])
 
   if (nestedInIframe) {
     return (
@@ -54,7 +81,6 @@ export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
     )
   }
 
-  const booking = outcome === 'book-call'
   return (
     <main className="qualification-page outcome-page">
       <header className="qualification-header">
@@ -67,9 +93,19 @@ export function SurveyOutcomePage({ outcome }: { outcome: Outcome }) {
             <h1 id="outcome-title">Let's talk about your Philippines trip.</h1>
             <p>Thanks for answering those questions. The next step is a quick conversation with the MET team to understand the experience and ask anything that's on your mind.</p>
             <p>Booking a call is not an approval or a commitment to join the trip.</p>
-            <section className="outcome-pending" aria-label="Booking calendar not yet connected">
-              <h2>Call booking is being set up</h2>
-              <p>The MET consultation calendar has not been connected to this preview yet. We will add it here before the funnel goes live.</p>
+            <section className="outcome-calendar" aria-label="Book your MET Philippines consultation">
+              <iframe
+                src={calendarUrl}
+                title="Book your MET Philippines trip consultation"
+                id="p6MbnDlBI7ywC4SfwpRS_1791580270720"
+                allow="payment"
+                scrolling="no"
+                style={{ width: '100%', height: '1080px', border: 'none', overflow: 'hidden' }}
+              />
+              <p className="outcome-calendar-fallback">
+                Can't see the booking calendar?{' '}
+                <a href={calendarUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab.</a>
+              </p>
             </section>
           </>
         ) : (
