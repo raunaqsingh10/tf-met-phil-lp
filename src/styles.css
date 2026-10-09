@@ -334,3 +334,8 @@ h3 { font-size: clamp(21px, 2.1vw, 28px); line-height: 1.19; letter-spacing: -.0
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* GHL native registration form displayed inside the existing Get Details sheet. */
+.ghl-registration-frame { display: block; width: 100%; background: transparent; }
+.ghl-form-fallback { margin: 10px 0 0; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.5; }
+.ghl-form-fallback a { color: var(--teal-dark); text-decoration: underline; text-underline-offset: 2px; }
