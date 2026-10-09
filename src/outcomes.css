@@ -1,0 +1,10 @@
+/* Survey redirect destinations: preview-only booking shell until GHL calendar is connected. */
+.outcome-intro { max-width: 800px; margin: 0 auto; padding: clamp(45px, 8vw, 85px) 24px 65px; }
+.outcome-intro .eyebrow { margin-bottom: 18px; }
+.outcome-intro h1 { max-width: 680px; margin: 0 0 21px; font-size: clamp(35px, 5vw, 50px); letter-spacing: -.04em; line-height: 1.12; }
+.outcome-intro > p { max-width: 650px; color: var(--body); font-size: 17px; line-height: 1.65; margin: 0 0 16px; }
+.outcome-pending { max-width: 650px; margin-top: 35px; padding: 22px 24px; border: 1px dashed var(--line); border-radius: 16px; background: var(--white); }
+.outcome-pending h2 { margin: 0 0 9px; font-size: 20px; }
+.outcome-pending p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
+.outcome-home-link { display: inline-block; margin-top: 23px; color: var(--teal-dark); font-weight: 700; text-underline-offset: 4px; }
+@media (max-width: 640px) { .outcome-intro { padding: 45px 20px 42px; } .outcome-pending { padding: 18px; } }
