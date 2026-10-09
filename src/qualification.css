@@ -1,0 +1,24 @@
+/* Standalone qualification page; preserves the landing page type and color system. */
+.qualification-page { min-height: 100dvh; }
+.qualification-header { max-width: 800px; margin: 0 auto; padding: 27px 24px 0; }
+.qualification-brand { display: inline-flex; align-items: baseline; gap: 10px; color: var(--teal-dark); text-decoration: none; font-weight: 750; font-size: 24px; letter-spacing: -.06em; }
+.qualification-brand span { color: var(--muted); font-size: 11px; letter-spacing: .16em; font-weight: 700; }
+.qualification-intro { max-width: 800px; margin: 0 auto; padding: 56px 24px 26px; }
+.qualification-intro .eyebrow { margin-bottom: 14px; }
+.qualification-intro h1 { max-width: 690px; margin: 0 0 16px; color: var(--ink); font-size: clamp(32px, 5vw, 48px); line-height: 1.13; letter-spacing: -.035em; }
+.qualification-intro > p:not(.eyebrow):not(.qualification-time) { max-width: 640px; color: var(--body); font-size: 16px; line-height: 1.65; }
+.qualification-time { margin: 19px 0 0; color: var(--teal-dark); font-size: 13px; font-weight: 700; }
+.qualification-survey { width: min(100% - 32px, 800px); margin: 0 auto; padding: 8px 8px 20px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); box-shadow: 0 18px 45px #1825250d; }
+.qualification-survey iframe { display: block; width: 100%; }
+.qualification-survey-fallback { margin: 8px 12px 0; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.5; }
+.qualification-survey-fallback a { color: var(--teal-dark); text-underline-offset: 3px; }
+.qualification-footer { max-width: 800px; margin: 0 auto; padding: 28px 24px 40px; text-align: center; color: var(--muted); font-size: 12px; }
+.qualification-iframe-redirect { padding: 24px; font: 16px/1.5 system-ui, sans-serif; }
+.qualification-iframe-redirect a { color: #203b42; }
+@media (max-width: 640px) {
+  .qualification-header { padding: 18px 17px 0; }
+  .qualification-intro { padding: 34px 19px 18px; }
+  .qualification-intro h1 { font-size: 32px; }
+  .qualification-survey { width: calc(100% - 18px); padding: 6px 2px 16px; border-radius: 15px; }
+  .qualification-footer { padding-bottom: 22px; }
+}
